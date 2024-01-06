@@ -8,7 +8,7 @@ WORKDIR /usr/local/tomcat/webapps/
 RUN rm -rf ROOT
 
 # Copy your web application WAR file into the webapps directory
-COPY your-web-app.war ROOT.war
+COPY mavenweb-web.war ROOT.war
 
 # Expose the default Tomcat port
 EXPOSE 8080
