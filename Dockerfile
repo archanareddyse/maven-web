@@ -1,15 +1,5 @@
-# Use an official Tomcat runtime as a base image
-FROM tomcat:9.0-jdk11-openjdk-slim
-
-# Set the working directory in the container
-WORKDIR /usr/local/tomcat/webapps/
-
-# Remove the default ROOT application
-RUN rm -rf ROOT
-
-# Copy your web application WAR file into the webapps directory
-COPY mavenweb-web.war ROOT.war
-
+ FROM tomcat:9.0
+   COPY target/HelloWorldApp.war /usr/local/tomcat/webapps/
 # Expose the default Tomcat port
 EXPOSE 8080
 
